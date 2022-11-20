@@ -5,8 +5,8 @@ services:
     container_name: auth_bp
     image: ${DOCKER_REGISTRY-}authboilerplate
     build:
-      context: ./AuthBoilerplate
-      dockerfile: Dockerfile
+      context: ./
+      dockerfile: ./AuthBoilerplate/Dockerfile
     networks:
     - postgres
   postgres:
