@@ -1,7 +1,7 @@
 steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-f', 'AuthBoilerplate/Dockerfile', '-t', 'southamerica-east1-docker.pkg.dev/${PROJECT_ID}/my-docker-repo/myimage', '.']
+    args: ['build', '-f', 'AuthBoilerplate/Dockerfile', '-t', 'southamerica-east1-docker.pkg.dev/${PROJECT_ID}/entity-auth-boilerplate/myimage', '.']
 
   # Docker Push
   - name: 'gcr.io/cloud-builders/docker'
