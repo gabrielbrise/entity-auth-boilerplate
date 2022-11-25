@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using AuthBoilerplate.Utils;
+using System.Diagnostics;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 // Use the pre-existing builder to load Configuration and connect to db
 var dbString = builder.Configuration.GetConnectionString("AuthConnectionString");
+Debug.WriteLine(dbString);
 builder.Services.AddDbContext<AuthBoilerplateDbContext>(options => options.UseNpgsql(dbString));
 builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<AuthBoilerplateDbContext>();
 
